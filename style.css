@@ -1,0 +1,19 @@
+body, html{
+    padding: 0px;
+    margin: 0px;
+}
+ul{
+    padding-left: 35%;
+}
+.floating_li{
+    float: left;
+    padding-left: 3%;
+    font-size: 1.5rem;
+}
+a:link{
+    color: #1d7fd4;
+}
+
+.menu_is-open{
+    left: -200px;
+}
