@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding: 0;
 }
+
 h1{
     width: 474px;
     margin: 10% auto;
@@ -22,5 +23,56 @@ h1:hover{
     margin: 10% auto;
     padding: 45px;
     transition: .3s;
-    text-shadow: #914A43 10px 3px;
+    text-shadow: #914A43 8px 3px;
+}
+h1::selection{
+    color: #914A43;
+    text-shadow: #E5ECC0 2px 5px;
+}
+h1:hover::selection{
+    text-shadow: #E5ECC0 8px 3px;
+}
+
+.image{
+    width: 400px;
+    height: 400px;
+    background-color: azure;
+    display: inline-block;
+}
+.container_three_img{
+    width: 1709px;
+    margin: 250px auto;
+}
+.border{
+    border-radius: 20px;
+}
+.every_end_image{
+    margin: 0px 250px
+}
+.img_1{
+    background-image: url(pic1.jpg);
+}
+.img_2{
+    background-image: url(pic2.jpg);
+}
+.img_3{
+    background-image: url(pic3.jpg);
+}
+.img_4{
+    background-image: url(pic4.jpg);
+}
+.img_5{
+    background-image: url(pic5.jpg);
+}
+.img_6{
+    background-image: url(pic6.jpg);
+}
+.img_7{
+    background-image: url(pic7.jpg);
+}
+.img_8{
+    background-image: url(pic8.jpg);
+}
+.img_9{
+    background-image: url(pic9.jpg);
 }
