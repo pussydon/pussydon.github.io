@@ -97,8 +97,9 @@ footer{
 }
 footer h3{
     text-align: center;
-    color: #f9ffc8;
+    color: #ecff78;
     padding: 20px 0px 0px 0px;
+    text-shadow: #B86D67 1px 3px;
 }
 
 .icons{
@@ -109,6 +110,12 @@ footer h3{
     background-position: 50% 50%;
     margin: auto;
     border-radius: 40px;
+    transition: .25s;
+}
+.icons:hover{
+    width: 100px;
+    height: 100px;
+    transition: .25s
 }
 .vk{
     background-image: url(vk-image.png);
