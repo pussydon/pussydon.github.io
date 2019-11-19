@@ -1,129 +1,83 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-body{
-    background-color: #4F7CAB;
-    font-family: 'Roboto', sans-serif;
+
+img{
+    display: block;
+    width: 800px;
+    height: 600px;
+    display: inline-block;
     margin: 0;
     padding: 0;
 }
-
-h1{
-    width: 474px;
-    margin: 10% auto;
-    font-size: 3rem;
-    color: #f9ffc8;
-    padding: 0px;
-    text-align: center;
-    border: 3px solid #fff;
-    border-radius: 8px;
-    padding: 8px;
-    transition: .3s;
-    text-shadow: #914A43 2px 5px;
-}
-h1:hover{
-    margin: 10% auto;
-    padding: 45px;
-    transition: .3s;
-    text-shadow: #914A43 8px 3px;
-}
-h1::selection{
-    color: #914A43;
-    text-shadow: #E5ECC0 2px 5px;
-}
-h1:hover::selection{
-    text-shadow: #E5ECC0 8px 3px;
-}
-
-.image{
-    width: 400px;
-    height: 400px;
-    background-color: azure;
-    display: inline-block;
-}
-.container_three_img{
-    width: 1709px;
-    margin: 250px auto;
-}
-.border{
-    border-radius: 20px;
-    transition: .8s;
-}
-.border:hover{
-    transform: rotate(180deg);
+ul{
+    width: 9999px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
     transition: .8s;
 }
 
-.every_end_image{
-    margin: 0px 250px
+.container{
+    height: 600px;
+    width: 800px;
+    position: relative;
+    margin: 9% auto;
+    background-color: rgb(126, 121, 121);
+    overflow: hidden;
+    border-radius: 12px;
 }
 
-.img_1{
-    background-image: url(pic1.jpg);
-}
-.img_2{
-    background-image: url(pic2.jpg);
-}
-.img_3{
-    background-image: url(pic3.jpg);
-}
-.img_4{
-    background-image: url(pic4.jpg);
-}
-.img_5{
-    background-image: url(pic5.jpg);
-}
-.img_6{
-    background-image: url(pic6.jpg);
-}
-.img_7{
-    background-image: url(pic7.jpg);
-}
-.img_8{
-    background-image: url(pic8.jpg);
-}
-.img_9{
-    background-image: url(pic9.jpg);
-}
 
-footer{
-    width: 100%;
-    background-color: #375678;
-}
-.about{
-    width: 40%;
-    height: 200px;
-    padding: 15px 0px;
-    display: flex;
-    margin: auto;
-}
-footer h3{
-    text-align: center;
-    color: #ecff78;
-    padding: 20px 0px 0px 0px;
-    text-shadow: #B86D67 1px 3px;
-}
-
-.icons{
+.btn{
     width: 75px;
-    height: 75px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    margin: auto;
-    border-radius: 40px;
-    transition: .25s;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    top: 0;
+    transition: .6s;
 }
-.icons:hover{
+.Left{
+    left: 0
+}
+.Right{
+    right: 0;
+}
+.btn:hover{
+    width: 125px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.btn:hover .left__icon{
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
     width: 100px;
     height: 100px;
-    transition: .25s
 }
-.vk{
-    background-image: url(vk-image.png);
-    border-radius: 100px;
+.btn:hover .right__icon{
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
 }
-.github{
-    background-image: url(github-image.png)
+
+
+.icon{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 37.5px);
+    transition: .6s;
 }
-.insta{
-    background-image: url(inst-image.png);
+.left__icon{
+    background: url(./pics/arrow__left.png) 50%/cover;
+    left: 0;
+}
+.right__icon{
+    background: url(./pics/arrow__right.png) 50%/cover;
+    left: 0;
+}
+
+.pos1{
+    transform: translateX(-804px);
+}
+.pos2{
+    transform: translateX(-1608px);
 }
