@@ -3,19 +3,19 @@ body{
 }
 @keyframes christmas{
     0%{
-        background: rgb(202, 43, 43);
+        background: rgb(243, 39, 39);
     }
     25%{
-        background: rgb(16, 158, 40);
+        background: rgb(22, 184, 49);
     }
     50%{
-        background: rgb(9, 58, 192);
+        background: rgb(15, 103, 236);
     }
     75%{
-        background: rgb(195, 206, 42);
+        background: rgb(223, 236, 32);
     }
     100%{
-        background: rgb(202, 43, 43);
+        background: rgb(243, 39, 39);
     }
 }
 .button{
@@ -25,14 +25,14 @@ body{
     display: inline-block;
     margin: 3px;
     border-radius: 50%;
-    animation: christmas 8s ease-in-out infinite;
+    animation: christmas 6s ease-in-out infinite;
 }
 .anim1{
-    animation: christmas 8s ease-in-out -2s infinite;
+    animation: christmas 6s ease-in-out -1s infinite;
 }
 .anim2{
-    animation: christmas 8s ease-in-out -4s infinite;
+    animation: christmas 6s ease-in-out -2.5s infinite;
 }
 .anim3{
-    animation: christmas 8s ease-in-out -6s infinite;
+    animation: christmas 6s ease-in-out -4s infinite;
 }
