@@ -1,8 +1,8 @@
-$(document).ready(function(){
-    $('#menu').on("click","a", function (event) {
-        event.preventDefault();
-        var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1500);
-    });
-});
+'use strict'
+
+        let count = Math.floor(Math.random() * (50 - 1)) + 1
+        for (let i = 1; i <= count; i++){
+            let el = document.createElement('div')
+            el.classList.add('button')
+            document.body.appendChild(el)
+        }
