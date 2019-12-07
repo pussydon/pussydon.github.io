@@ -1,10 +1,38 @@
 body{
     text-align: center;
 }
+@keyframes christmas{
+    0%{
+        background: rgb(202, 43, 43);
+    }
+    25%{
+        background: rgb(16, 158, 40);
+    }
+    50%{
+        background: rgb(9, 58, 192);
+    }
+    75%{
+        background: rgb(195, 206, 42);
+    }
+    100%{
+        background: rgb(202, 43, 43);
+    }
+}
 .button{
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     background-color: rgb(155, 127, 255);
     display: inline-block;
-    margin: 6px;
+    margin: 3px;
+    border-radius: 50%;
+    animation: christmas 8s ease-in-out infinite;
+}
+.anim1{
+    animation: christmas 8s ease-in-out -2s infinite;
+}
+.anim2{
+    animation: christmas 8s ease-in-out -4s infinite;
+}
+.anim3{
+    animation: christmas 8s ease-in-out -6s infinite;
 }
