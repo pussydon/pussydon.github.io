@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        .block{
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            margin: 5px 10px;
+            display: inline-block;
+            transition: .2s;
+        }
+        .container{
+            width: 50vw;
+            height: 50vh;
+            margin: auto;
+        }
+        .yellow{
+            background-color: rgb(243, 243, 55);
+        }
+        .blue{
+            background-color: rgb(44, 44, 216);
+        }
+        .hidden{
+            border: 2px solid rgba(0, 0, 0, 0);
+            background: #fff;
+        }
+        .pressed{
+            width: 160px;
+            height: 160px;
+            transition: .3s;
+        }
+    </style>
 </head>
 <body>
+    <script>
+        'use strict'
 
-    <script src ='script.js'></script>
+        let container = document.createElement('div')
+        let last_box = false
+
+        document.body.appendChild(container)
+        container.classList.add('container')
+        for(let i = 0; i < 25; i++){
+            let x = Math.floor(Math.random() * (2)) + 1
+            let blocks = document.createElement('div')
+            container.appendChild(blocks)
+            blocks.classList.add('block')
+            if(x == 1) blocks.classList.add('yellow')
+            if(x == 2) blocks.classList.add('blue')
+            blocks.addEventListener('click', function(e){
+                blocks.classList.add('pressed')
+                if (!last_box){
+                    last_box = blocks
+                }
+                else if(last_box !== blocks){
+                    if(last_box.classList.contains('yellow') && blocks.classList.contains('yellow')){
+                        last_box.classList.add('hidden')
+                        last_box.classList.remove('yellow')
+                        last_box.classList.remove('pressed')
+                        blocks.classList.add('hidden')
+                        blocks.classList.remove('yellow')
+                    }
+                    if(last_box.classList.contains('blue') && blocks.classList.contains('blue')){
+                        last_box.classList.add('hidden')
+                        last_box.classList.remove('blue')
+                        last_box.classList.remove('pressed')
+                        blocks.classList.add('hidden')
+                        blocks.classList.remove('blue')
+                    }
+                    last_box.classList.remove('pressed')
+                    blocks.classList.remove('pressed')
+                    last_box = false
+                }
+            })
+        }
+    </script>
 </body>
 </html>
