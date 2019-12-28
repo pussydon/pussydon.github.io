@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+h1{
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Comfortaa', cursive;
+    font-size: 5rem;
+    color: #c42034;
+    text-shadow: 5px 3px #283043;
+}
+h1::selection{
+    color: #6097ce;
+}
+
