@@ -1,16 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Messenger</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+        body{
+            background-color: #e5ecf3;
+            color: #181614;
+            font-family: 'Roboto Mono', monospace;
+        }
+        h2{
+            margin: 15px;
+        }
+        .input{
+            font-family: 'Roboto Mono', monospace;
+            background-color: #c4d0ee;
+            color: #181614;
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            margin: 2px;
+            border-radius: 8px;
+            margin-left: 0;
+            outline: none;
+        }
+        .btn{
+            font-family: 'Roboto Mono', monospace;
+            background-color: #92817b;
+            font-weight: 800;
+            color: #e5ecf3;
+            border: none;
+            margin-top: 20px;
+            margin-left: 100px;
+            width: 100px;
+            height: 50px;
+            border-radius: 12px;
+            outline: none;
+        }
+        .btn:hover{
+            cursor: pointer;
+        }
+        .container{
+            width: 500px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
 </head>
 <body>
-    <h1>βαθύς</h1>
-    <h2>Официальный сайт представителей клана βαθύς</h2>
+    <div class="container">
+        <h2>Форма сообщения</h2>
+        <br>
+        <input id='name' class='input' type="text" name='name' placeholder='Введите имя'>
+        <br>
+        <input id='input' class='input' type="text" name='message' placeholder='Введите сообщение'>
+        <br>
+        <button id='btn' class='btn'>Отправить</button>
+    </div>
 
-    <script src = 'script.js'></script>
+    <div class="container">
+        <h2>Чат</h2>
+        <br>
+        <div id='messages'></div>
+    </div>
+
+<!-- Where code starts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function()  {
+            let socket = io.connect()
+            let btn = document.getElementById('btn')
+            let input = document.getElementById('input')
+            let name = document.getElementById('name')
+            let $allMessages = $('#messages')
+            
+
+            btn.addEventListener('click', function(e){
+                e.preventDefault()
+                socket.emit('send message', {mess: input.value, name: name.value})
+                input.value = ''
+            })
+
+            socket.on('add message', function(data) {
+                $allMessages.append("<div><b>" + data.name + "</b>: " + data.msg + "</div>")
+            })
+
+        })
+    </script>
 </body>
 </html>
